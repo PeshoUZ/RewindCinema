@@ -1,0 +1,91 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="login-container">
+    <div class="login-box">
+        <h2 class="text-center">Login</h2>
+
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger text-center">
+                @TempData["ErrorMessage"]
+            </div>
+        }
+
+        <form method="post" asp-action="Login" asp-controller="Account">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" required />
+            </div>
+
+            <button type="submit" class="btn btn-danger btn-block">Login</button>
+
+            <div class="text-center mt-3">
+                <a href="/Account/Register" class="register-link">Don't have an account? Register</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: black;
+        color: white;
+    }
+
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .login-box {
+        background-color: #1a1a1a;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.5);
+        width: 350px;
+    }
+
+    h2 {
+        color: red;
+    }
+
+    .form-control {
+        background-color: #333;
+        color: white;
+        border: 1px solid red;
+    }
+
+        .form-control:focus {
+            background-color: #444;
+            color: white;
+            border-color: darkred;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+        }
+
+    .btn-danger {
+        background-color: red;
+        border: none;
+    }
+
+        .btn-danger:hover {
+            background-color: darkred;
+        }
+
+    .register-link {
+        color: red;
+        text-decoration: none;
+    }
+
+        .register-link:hover {
+            text-decoration: underline;
+        }
+</style>

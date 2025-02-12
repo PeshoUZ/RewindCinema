@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ru61c27d35iV63zSmcBIOxpM8Z22a7Ow/vVDxcBPP9FospaaxUhSvwbHBnDhIFZuhxpBgp+0DoiHcxAVPJYlrw==",
+  "dgSpecHash": "m0Vo64J8QTpsG5GC7BeuU/YVYzzd3JB0w8Kjyahcz17lrW7T34o5YUcqz4NznwZfpKFUXsjAHOQhC3kSWNcJlw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\CinemaMVC\\VintageCinema\\VintageCinema.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\VintageCinema.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

@@ -1,0 +1,127 @@
+﻿@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="register-container">
+    <div class="register-box">
+        <h2 class="text-center">Register</h2>
+
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger text-center">
+                @TempData["ErrorMessage"]
+            </div>
+        }
+
+        <form method="post" asp-action="Register" asp-controller="Account">
+            <div class="form-group">
+                <label for="firstname">First Name:</label>
+                <input type="text" class="form-control" id="firstname" name="firstname" required />
+            </div>
+
+            <div class="form-group">
+                <label for="lastname">Last Name:</label>
+                <input type="text" class="form-control" id="lastname" name="lastname" required />
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" required />
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required />
+            </div>
+
+            <button type="submit" class="btn btn-danger btn-block">Register</button>
+
+            <div class="text-center mt-3">
+                <a href="/Account/Login" class="login-link">Already have an account? Login</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: black;
+        color: white;
+    }
+     /* Center the form on the page */
+     .register-container {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: 100vh;
+         background-color: black;
+     }
+
+     /* Registration box styling */
+     .register-box {
+         background-color: #1a1a1a;
+         padding: 30px;
+         border-radius: 10px;
+         box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.5);
+         width: 400px;
+     }
+
+     h2 {
+         color: red;
+         text-align: center;
+     }
+
+     /* Input field styles */
+     .form-control {
+         background-color: #333;
+         color: white;
+         border: 1px solid red;
+     }
+
+         .form-control:focus {
+             background-color: #444;
+             color: white;
+             border-color: darkred;
+             box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+         }
+
+     /* Button styles */
+     .btn-danger {
+         background-color: red;
+         border: none;
+         width: 100%;
+         padding: 10px;
+         font-size: 1.2rem;
+         margin-top: 10px;
+     }
+
+         .btn-danger:hover {
+             background-color: darkred;
+         }
+
+     /* Login link styling */
+     .login-link {
+         color: red;
+         text-decoration: none;
+         display: block;
+         text-align: center;
+         margin-top: 10px;
+     }
+
+         .login-link:hover {
+             text-decoration: underline;
+         }
+
+     /* Error message styling */
+     .alert-danger {
+         background-color: darkred;
+         color: white;
+         border: none;
+         text-align: center;
+     }
+</style>

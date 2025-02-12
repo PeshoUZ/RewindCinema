@@ -1,5 +1,11 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
-using VintageCinema.Data; // Adjust the namespace to match your project
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using VintageCinema.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +17,25 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
+// Add Cookie Authentication
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Account/Login"; // Redirect if not authenticated
+        options.LogoutPath = "/Account/Logout";
+        options.AccessDeniedPath = "/Account/Login";
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+        options.SlidingExpiration = true;
+    });
+
+// Add session support
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Session timeout
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
 var app = builder.Build();
 
 // Seed the database
@@ -18,14 +43,22 @@ using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
     var context = services.GetRequiredService<ApplicationDbContext>();
-    DataSeeder.Seed(context); // Call the DataSeeder
+
+    try
+    {
+        context.Database.Migrate(); // Apply pending migrations
+        DataSeeder.Seed(context); // Call the DataSeeder
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Database seeding failed: {ex.Message}");
+    }
 }
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -34,7 +67,12 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+// Enable authentication and authorization
+app.UseAuthentication();
 app.UseAuthorization();
+
+// Enable sessions
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",
