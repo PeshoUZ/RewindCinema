@@ -1,8 +1,145 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model List<VintageCinema.Models.ViewModels.MovieScreeningViewModel>
+
+@{
+    ViewData["Title"] = "Cinema Program";
+    string selectedDate = ViewData["SelectedDate"] as string ?? DateTime.Today.ToString("yyyy-MM-dd");
+    string selectedFormat = ViewData["FormatFilter"] as string ?? "";
+    string selectedGenre = ViewData["GenreFilter"] as string ?? "";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+    body {
+        background-color: black;
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+
+    .filters {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        padding: 15px;
+        background-color: #1a1a1a;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
+
+        .filters a, .filters button, .filters select, .filters input {
+            padding: 10px 15px;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .filters a {
+            background-color: #B30000;
+            color: white;
+            text-decoration: none;
+        }
+
+        .filters button {
+            background-color: #B30000;
+            color: white;
+        }
+
+        .filters select, .filters input {
+            background-color: #333;
+            color: white;
+        }
+
+    .movie-container {
+        background-color: #1a1a1a;
+        color: white;
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    .movie-poster {
+        width: 100px;
+        height: 150px;
+        border-radius: 5px;
+        margin-right: 15px;
+    }
+
+    .movie-info {
+        flex-grow: 1;
+    }
+
+    .reserve-btn {
+        background-color: #B30000;
+        color: white;
+        padding: 8px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    select {
+        background-color: #333;
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+    }
+</style>
+
+<!-- Filter Navigation -->
+<div class="filters">
+    <a asp-action="Index" asp-route-selectedDate="@DateTime.Today.ToString("yyyy-MM-dd")" asp-route-formatFilter="@selectedFormat" asp-route-genreFilter="@selectedGenre">Today</a>
+    <a asp-action="Index" asp-route-selectedDate="@DateTime.Today.AddDays(1).ToString("yyyy-MM-dd")" asp-route-formatFilter="@selectedFormat" asp-route-genreFilter="@selectedGenre">Tomorrow</a>
+
+    <form method="get" action="@Url.Action("Index")">
+        <input type="date" name="selectedDate" value="@selectedDate" />
+        <select name="formatFilter">
+            <option value="" selected="@(string.IsNullOrEmpty(selectedFormat))">All Formats</option>
+            <option value="2D" selected="@(selectedFormat == "2D")">2D</option>
+            <option value="3D" selected="@(selectedFormat == "3D")">3D</option>
+            <option value="IMAX" selected="@(selectedFormat == "IMAX")">IMAX</option>
+        </select>
+
+        <select name="genreFilter">
+            <option value="" selected="@(string.IsNullOrEmpty(selectedGenre))">All Genres</option>
+            <option value="Action" selected="@(selectedGenre == "Action")">Action</option>
+            <option value="Comedy" selected="@(selectedGenre == "Comedy")">Comedy</option>
+            <option value="Drama" selected="@(selectedGenre == "Drama")">Drama</option>
+        </select>
+        <button type="submit">Filter</button>
+    </form>
 </div>
+
+<!-- Movies List -->
+@if (Model == null || !Model.Any())
+{
+    <p style="text-align: center; color: white;">No screenings available for this date.</p>
+}
+else
+{
+    @foreach (var group in Model)
+    {
+        var movie = group.Movie;
+        var screenings = group.Screenings;
+
+        <div class="movie-container">
+            <img src="data:image/jpeg;base64,@(Convert.ToBase64String(movie.Picture))" alt="@movie.Title" class="movie-poster" />
+            <div class="movie-info">
+                <h3>@movie.Title (@movie.Category)</h3>
+                <p>@movie.Genre | @movie.Length minutes</p>
+
+                <!-- Showtime Dropdown -->
+                <label for="showtime-@movie.Id"><strong>Select Showtime:</strong></label>
+                <select id="showtime-@movie.Id" class="form-select bg-dark text-white w-auto d-inline">
+                    @foreach (var screening in screenings)
+                    {
+                        <option value="@screening.Id">@screening.DateTime.ToShortTimeString() - @screening.Format</option>
+                    }
+                </select>
+
+                <button class="reserve-btn">Reserve</button>
+            </div>
+        </div>
+    }
+}

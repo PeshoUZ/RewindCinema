@@ -12,8 +12,8 @@ using VintageCinema.Data;
 namespace VintageCinema.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250210192343_RemovedSeatsModel")]
-    partial class RemovedSeatsModel
+    [Migration("20250214142138_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -302,6 +302,9 @@ namespace VintageCinema.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("DateTime")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<string>("Format")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -312,9 +315,6 @@ namespace VintageCinema.Migrations
                     b.Property<string>("Seats")
                         .IsRequired()
                         .HasColumnType("JSON");
-
-                    b.Property<DateTime>("dateTime")
-                        .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
 

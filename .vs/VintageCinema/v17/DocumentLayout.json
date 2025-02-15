@@ -3,8 +3,72 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|c:\\users\\user\\desktop\\new folder\\vintagecinema\\models\\reservationmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|solutionrelative:models\\reservationmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|c:\\users\\user\\desktop\\new folder\\vintagecinema\\models\\screeningmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|solutionrelative:models\\screeningmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|c:\\users\\user\\desktop\\new folder\\vintagecinema\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|c:\\users\\user\\desktop\\new folder\\vintagecinema\\models\\moviescreeningviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|solutionrelative:models\\moviescreeningviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|c:\\users\\user\\desktop\\new folder\\vintagecinema\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|c:\\users\\user\\desktop\\new folder\\vintagecinema\\views\\admin\\indexadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|solutionrelative:views\\admin\\indexadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|c:\\users\\user\\desktop\\new folder\\vintagecinema\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|c:\\users\\user\\desktop\\new folder\\vintagecinema\\data\\dataseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|solutionrelative:data\\dataseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|c:\\users\\user\\desktop\\new folder\\vintagecinema\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|c:\\users\\user\\desktop\\new folder\\vintagecinema\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|c:\\users\\user\\desktop\\new folder\\vintagecinema\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|c:\\users\\user\\desktop\\new folder\\vintagecinema\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|solutionrelative:models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|c:\\users\\user\\desktop\\new folder\\vintagecinema\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Migrations\\20250214141407_MoviesAdded.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20250214141407_MoviesAdded.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|c:\\users\\user\\desktop\\new folder\\vintagecinema\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|solutionrelative:models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|c:\\users\\user\\desktop\\new folder\\vintagecinema\\models\\moviemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|solutionrelative:models\\moviemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Migrations\\20250214141058_MoviesAdded.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20250214141058_MoviesAdded.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|c:\\users\\user\\desktop\\new folder\\vintagecinema\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -21,26 +85,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|c:\\users\\user\\desktop\\new folder\\vintagecinema\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|c:\\users\\user\\desktop\\new folder\\vintagecinema\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|c:\\users\\user\\desktop\\new folder\\vintagecinema\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|solutionrelative:models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|c:\\users\\user\\desktop\\new folder\\vintagecinema\\data\\dataseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|solutionrelative:data\\dataseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|c:\\users\\user\\desktop\\new folder\\vintagecinema\\models\\moviemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|solutionrelative:models\\moviemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|c:\\users\\user\\desktop\\new folder\\vintagecinema\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA5D0762-24F7-41D5-94C9-342E096E194B}|VintageCinema.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,67 +106,119 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Views\\Account\\Register.cshtml",
-              "RelativeDocumentMoniker": "Views\\Account\\Register.cshtml",
-              "ToolTip": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Views\\Account\\Register.cshtml",
-              "RelativeToolTip": "Views\\Account\\Register.cshtml",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAowEgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-12T06:52:14.258Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Views\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
-              "ToolTip": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Views\\Account\\Login.cshtml",
-              "RelativeToolTip": "Views\\Account\\Login.cshtml",
-              "ViewState": "AQIAACEAAAAAAAAAAAAAACQAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-12T06:40:41.905Z",
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAHQAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T14:44:03.235Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "Controllers\\AccountController.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAgwEAAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T06:30:49.825Z",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAG4AAAAAAAAAAAAowJAAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-12T21:48:11.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IndexAdmin.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Views\\Admin\\IndexAdmin.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\IndexAdmin.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Views\\Admin\\IndexAdmin.cshtml",
+              "RelativeToolTip": "Views\\Admin\\IndexAdmin.cshtml",
+              "ViewState": "AQIAADwAAAAAAAAAAAAowF4AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-14T14:46:42.843Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
-              "ToolTip": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "wwwroot\\css\\site.css",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-02-10T19:49:43.245Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAAAFUAAAAGAAAA",
+              "ViewState": "AQIAAGwAAAAAAAAAAAAAAG0AAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-10T19:45:30.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ReservationModel.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Models\\ReservationModel.cs",
+              "RelativeDocumentMoniker": "Models\\ReservationModel.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Models\\ReservationModel.cs",
+              "RelativeToolTip": "Models\\ReservationModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T14:11:37.428Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ScreeningModel.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Models\\ScreeningModel.cs",
+              "RelativeDocumentMoniker": "Models\\ScreeningModel.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Models\\ScreeningModel.cs",
+              "RelativeToolTip": "Models\\ScreeningModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T21:46:16.085Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MovieScreeningViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Models\\MovieScreeningViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\MovieScreeningViewModel.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Models\\MovieScreeningViewModel.cs",
+              "RelativeToolTip": "Models\\MovieScreeningViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T14:00:55.851Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAowC0AAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T21:52:56.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAowCAAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-10T17:33:13.668Z",
               "EditorCaption": ""
             },
             {
@@ -133,38 +229,27 @@
               "RelativeDocumentMoniker": "Data\\DataSeeder.cs",
               "ToolTip": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Data\\DataSeeder.cs",
               "RelativeToolTip": "Data\\DataSeeder.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAwwGcAAAAAAAAA",
+              "ViewState": "AQIAACcAAAAAAAAAAAAqwDQAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-10T18:51:27.787Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
               "ToolTip": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Data\\ApplicationDbContext.cs",
               "RelativeToolTip": "Data\\ApplicationDbContext.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAswC8AAABAAAAA",
+              "ViewState": "AQIAABwAAAAAAAAAAAAowD4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-08T08:06:51.096Z"
+              "WhenOpened": "2025-02-08T08:06:51.096Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MovieModel.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Models\\MovieModel.cs",
-              "RelativeDocumentMoniker": "Models\\MovieModel.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Models\\MovieModel.cs",
-              "RelativeToolTip": "Models\\MovieModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T19:31:48.344Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "UserModel.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Models\\UserModel.cs",
               "RelativeDocumentMoniker": "Models\\UserModel.cs",
@@ -177,16 +262,116 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T17:33:13.668Z",
+              "DocumentIndex": 12,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-14T14:17:12.665Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "20250214141407_MoviesAdded.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Migrations\\20250214141407_MoviesAdded.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250214141407_MoviesAdded.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Migrations\\20250214141407_MoviesAdded.cs",
+              "RelativeToolTip": "Migrations\\20250214141407_MoviesAdded.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T14:14:07.78Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Models\\ErrorViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T14:11:52.437Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "20250214141058_MoviesAdded.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Migrations\\20250214141058_MoviesAdded.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250214141058_MoviesAdded.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Migrations\\20250214141058_MoviesAdded.cs",
+              "RelativeToolTip": "Migrations\\20250214141058_MoviesAdded.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T14:10:59.177Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "MovieModel.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Models\\MovieModel.cs",
+              "RelativeDocumentMoniker": "Models\\MovieModel.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Models\\MovieModel.cs",
+              "RelativeToolTip": "Models\\MovieModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T19:31:48.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-02-10T19:49:43.245Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAgwEAAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T06:30:49.825Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "Views\\Account\\Login.cshtml",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAACQAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-12T06:40:41.905Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "Views\\Account\\Register.cshtml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAowEgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-12T06:52:14.258Z"
             }
           ]
         }

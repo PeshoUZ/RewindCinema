@@ -83,7 +83,7 @@
         }
     </style>
 </head>
-<body>
+<body> 
     <header>
         <!-- FIRST NAVBAR -->
         <nav class="navbar navbar-expand-sm top-navbar">
@@ -130,6 +130,13 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        @* @inject VintageCinema.Data.ApplicationDbContext _context *@
+                        @if (User.Identity.IsAuthenticated && User.Claims.Any(c => c.Type == "IsAdmin" && c.Value == "true"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Admin" asp-action="IndexAdmin">Admin Panel</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

@@ -1,32 +1,54 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+using Microsoft.EntityFrameworkCore;
+using VintageCinema.Data;
 using VintageCinema.Models;
+using VintageCinema.Models.ViewModels;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace VintageCinema.Controllers
+public class HomeController : Controller
 {
-    public class HomeController : Controller
+    private readonly ApplicationDbContext _db;
+
+    public HomeController(ApplicationDbContext db)
     {
-        private readonly ILogger<HomeController> _logger;
+        _db = db;
+    }
 
-        public HomeController(ILogger<HomeController> logger)
+    public IActionResult Index(DateTime? selectedDate, string? formatFilter, string? genreFilter)
+    {
+        if (!selectedDate.HasValue)
+            selectedDate = DateTime.Today;
+
+        var screeningsQuery = _db.Screenings
+            .Include(s => s.Movie)
+            .Where(s => s.DateTime.Date == selectedDate.Value.Date);
+
+        if (!string.IsNullOrEmpty(formatFilter))
         {
-            _logger = logger;
+            screeningsQuery = screeningsQuery.Where(s => s.Format == formatFilter);
         }
 
-        public IActionResult Index()
+        if (!string.IsNullOrEmpty(genreFilter))
         {
-            return View();
+            screeningsQuery = screeningsQuery.Where(s => s.Movie.Genre.Contains(genreFilter));
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+        var groupedMovies = screeningsQuery
+            .AsEnumerable()
+            .GroupBy(s => s.Movie)
+            .Select(g => new MovieScreeningViewModel
+            {
+                Movie = g.Key,
+                Screenings = g.ToList()
+            })
+            .ToList();
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        ViewData["SelectedDate"] = selectedDate.Value.ToString("yyyy-MM-dd");
+        ViewData["FormatFilter"] = formatFilter;
+        ViewData["GenreFilter"] = genreFilter;
+
+        return View(groupedMovies);
     }
 }

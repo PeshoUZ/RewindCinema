@@ -1,0 +1,95 @@
+﻿@model List<VintageCinema.Models.ScreeningModel>
+
+@{
+    ViewData["Title"] = "Admin Panel";
+    var movies = ViewBag.Movies as List<VintageCinema.Models.MovieModel> ?? new List<VintageCinema.Models.MovieModel>();
+}
+
+<style>
+    body {
+        background-color: black;
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        background-color: #1a1a1a;
+        border-radius: 10px;
+    }
+
+    .btn {
+        background-color: #B30000;
+        color: white;
+        padding: 8px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    select, input {
+        background-color: #333;
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+    }
+</style>
+
+<h2>Admin Panel - Manage Screenings</h2>
+
+<!-- ✅ Add Screening Form -->
+<form method="post" action="@Url.Action("Create")">
+    <label>Select Movie:</label>
+    <select name="MovieId" required>
+        @foreach (var movie in movies)
+        {
+            <option value="@movie.Id">@movie.Title</option>
+        }
+    </select>
+
+    <label>Screening Date & Time:</label>
+    <input type="datetime-local" name="DateTime" required />
+
+    <label>Format:</label>
+    <select name="Format" required>
+        <option value="2D">2D</option>
+        <option value="3D">3D</option>
+        <option value="IMAX">IMAX</option>
+    </select>
+
+    <button type="submit" class="btn">Add Screening</button>
+</form>
+
+<hr>
+
+<!-- ✅ List of Screenings -->
+<table border="1" style="width: 100%; text-align: left; color: white;">
+    <thead>
+        <tr>
+            <th>Movie</th>
+            <th>Date & Time</th>
+            <th>Format</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var screening in Model)
+        {
+            <tr>
+                <td>@screening.Movie.Title</td>
+                <td>@screening.DateTime</td>
+                <td>@screening.Format</td>
+                <td>
+                    <a href="@Url.Action("Edit", new { id = screening.Id })" class="btn">Edit</a>
+                    <form method="post" action="@Url.Action("Delete")" style="display: inline;">
+                        <input type="hidden" name="id" value="@screening.Id" />
+                        <button type="submit" class="btn">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
