@@ -19,9 +19,8 @@ namespace VintageCinema.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder); // Identity configurations
+            base.OnModelCreating(modelBuilder); 
 
-            // Configure other relationships and properties
             modelBuilder.Entity<ScreeningModel>()
                 .HasOne(s => s.Movie)
                 .WithMany()

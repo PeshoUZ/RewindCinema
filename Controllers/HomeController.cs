@@ -108,7 +108,6 @@ public class HomeController : Controller
             // Deserialize the selected seats from JSON
             var seats = JsonSerializer.Deserialize<List<Seat>>(selectedSeats);
 
-            // Log the selected seats for debugging
             Console.WriteLine("Selected Seats: " + JsonSerializer.Serialize(seats));
 
             var screening = await _db.Screenings.FindAsync(screeningId);
@@ -125,35 +124,29 @@ public class HomeController : Controller
             decimal pricePerSeat = screening.Price;
             decimal totalPrice = seats.Count * pricePerSeat;
 
-            // Create the reservation
             var reservation = new ReservationModel
             {
                 UserId = int.Parse(userId),
                 ScreeningId = screeningId,
-                ReservedSeats = seats, // This will be serialized to JSON
+                ReservedSeats = seats,
                 Bill = totalPrice
             };
 
-            // Log the reservation for debugging
             Console.WriteLine("Reservation: " + JsonSerializer.Serialize(reservation));
 
-            // Save the reservation
             _db.Reservations.Add(reservation);
             await _db.SaveChangesAsync();
 
-            // Store the success message in TempData
             TempData["SuccessMessage"] = $"Reservation confirmed successfully! Your total is ${totalPrice:0.00}. You will be redirected to the home page in 5 seconds.";
 
-            // Redirect to the ReservationSuccess view
             return RedirectToAction("ReservationSuccess");
         }
         catch (Exception ex)
         {
-            // Log the exception (optional)
             Console.WriteLine("Error confirming reservation: " + ex.Message);
 
             TempData["ErrorMessage"] = "An error occurred while processing your reservation. Please try again.";
-            return RedirectToAction("Reserve", new { id = screeningId }); // Redirect back to the seat selection page
+            return RedirectToAction("Reserve", new { id = screeningId }); 
         }
     }
 

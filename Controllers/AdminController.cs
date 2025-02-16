@@ -35,27 +35,25 @@ public class AdminController : Controller
         return View(screenings);
     }
 
-    // Create Screening (POST)
     [HttpPost]
     public async Task<IActionResult> Create(ScreeningModel screening)
     {
-        Console.WriteLine($"🛠️ DEBUG: MovieId: {screening.MovieId}, DateTime: {screening.DateTime}, Format: {screening.Format}, Price: {screening.Price}");
+        Console.WriteLine($"DEBUG: MovieId: {screening.MovieId}, DateTime: {screening.DateTime}, Format: {screening.Format}, Price: {screening.Price}");
 
-        // Fetch the Movie manually
         var movie = await _db.Movies.FindAsync(screening.MovieId);
         if (movie == null)
         {
-            Console.WriteLine("❌ ERROR: Movie not found.");
+            Console.WriteLine("ERROR: Movie not found.");
             ModelState.AddModelError("MovieId", "Invalid movie selected.");
         }
         else
         {
-            screening.Movie = movie; // Assign movie manually
+            screening.Movie = movie; 
         }
 
         if (!ModelState.IsValid)
         {
-            Console.WriteLine("❌ ERROR: ModelState is invalid.");
+            Console.WriteLine("ERROR: ModelState is invalid.");
             ViewBag.Movies = await _db.Movies.ToListAsync();
             return View("IndexAdmin", await _db.Screenings.Include(s => s.Movie).ToListAsync());
         }
@@ -102,7 +100,6 @@ public class AdminController : Controller
         return View(reservations);
     }
 
-    // Helper function to create an empty 16x16 seat layout
     private List<List<bool>> GenerateEmptySeats()
     {
         return Enumerable.Range(0, 16)

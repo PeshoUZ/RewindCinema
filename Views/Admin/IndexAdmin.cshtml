@@ -14,7 +14,7 @@
         padding: 0;
         display: flex;
         flex-direction: column;
-        min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+        min-height: 100vh;
     }
 
     .admin-container {
@@ -24,7 +24,7 @@
         background-color: #1a1a1a;
         border-radius: 10px;
         box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
-        flex: 1; /* Allow the container to grow and push the footer down */
+        flex: 1; 
     }
 
     h2 {
@@ -36,26 +36,33 @@
     .btn {
         background-color: #B30000;
         color: white;
-        padding: 8px 15px;
+        padding: 10px 15px;
         border: none;
         border-radius: 5px;
         cursor: pointer;
         margin-top: 10px;
         transition: background-color 0.3s ease;
+        font-size: 16px;
     }
 
-        .btn:hover {
-            background-color: #ff1a1a;
-        }
+    .btn:hover {
+        background-color: #ff1a1a;
+    }
 
     select, input {
         background-color: #333;
         color: white;
-        padding: 8px;
+        padding: 10px;
         border: 1px solid #444;
         border-radius: 5px;
         margin-bottom: 10px;
         width: 100%;
+        font-size: 16px;
+    }
+
+    /* Responsive Table */
+    .table-container {
+        overflow-x: auto;
     }
 
     table {
@@ -63,6 +70,7 @@
         border-collapse: collapse;
         margin-top: 20px;
         border: none;
+        min-width: 600px;
     }
 
     th, td {
@@ -83,60 +91,57 @@
 
     .actions {
         display: flex;
+        flex-wrap: wrap;
         gap: 10px;
     }
 
-        .actions form {
-            margin: 0;
-        }
+    .actions form {
+        margin: 0;
+    }
 
-        .actions .btn {
-            margin: 0;
-        }
+    .actions .btn {
+        margin: 0;
+        font-size: 14px;
+        padding: 8px 12px;
+    }
 
     hr {
         border: 1px solid #444;
         margin: 20px 0;
     }
-    /* Responsive Table */
+
+    /* ✅ Mobile Styling */
     @@media (max-width: 768px) {
-        table, thead, tbody, th, td, tr {
-            display: block;
+        .admin-container {
+            padding: 15px;
         }
 
-        th {
-            position: absolute;
-            top: -9999px;
-            left: -9999px;
+        .btn {
+            width: 100%; /* Full-width buttons for easier clicking */
+            text-align: center;
         }
 
-        tr {
-            border: 1px solid #444;
-            margin-bottom: 10px;
+        select, input {
+            padding: 8px;
+            font-size: 14px;
         }
 
-        td {
-            border: none;
-            position: relative;
-            padding-left: 50%;
+        .actions {
+            flex-direction: column;
+            gap: 5px;
         }
 
-            td:before {
-                position: absolute;
-                left: 10px;
-                width: 45%;
-                padding-right: 10px;
-                white-space: nowrap;
-                content: attr(data-label);
-            }
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
     }
-
 </style>
 
 <div class="admin-container">
     <h2>Admin Panel - Manage Screenings</h2>
 
-    <!-- ✅ Add Screening Form -->
+    <!-- Screening Form -->
     <form method="post" action="@Url.Action("Create")">
         <label>Select Movie:</label>
         <select name="MovieId" required>
@@ -164,37 +169,39 @@
 
     <hr>
 
-    <!-- ✅ List of Screenings -->
-    <table>
-        <thead>
-            <tr>
-                <th>Movie</th>
-                <th>Date & Time</th>
-                <th>Format</th>
-                <th>Price</th>
-                <th>Actions</th>
-                <th>Reservations</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var screening in Model)
-            {
+    <!-- List of Screenings -->
+    <div class="table-container">
+        <table>
+            <thead>
                 <tr>
-                    <td>@screening.Movie.Title</td>
-                    <td>@screening.DateTime</td>
-                    <td>@screening.Format</td>
-                    <td>$@screening.Price.ToString("0.00")</td>
-                    <td class="actions">
-                        <form method="post" action="@Url.Action("Delete")" style="display: inline;">
-                            <input type="hidden" name="id" value="@screening.Id" />
-                            <button type="submit" class="btn">Delete</button>
-                        </form>
-                    </td>
-                    <td>
-                        <a href="@Url.Action("Reservations", new { screeningId = screening.Id })" class="btn">View Reservations</a>
-                    </td>
+                    <th>Movie</th>
+                    <th>Date & Time</th>
+                    <th>Format</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                    <th>Reservations</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var screening in Model.OrderBy(m => m.DateTime).Where(m => m.DateTime>=DateTime.Today))
+                {
+                    <tr>
+                        <td>@screening.Movie.Title</td>
+                        <td>@screening.DateTime</td>
+                        <td>@screening.Format</td>
+                        <td>$@screening.Price.ToString("0.00")</td>
+                        <td class="actions">
+                            <form method="post" action="@Url.Action("Delete")" style="display: inline;">
+                                <input type="hidden" name="id" value="@screening.Id" />
+                                <button type="submit" class="btn">Delete</button>
+                            </form>
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Reservations", new { screeningId = screening.Id })" class="btn">View Reservations</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>

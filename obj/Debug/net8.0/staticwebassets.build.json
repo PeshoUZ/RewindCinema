@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "f4o7FM6/U+1pV9UXnernJvqu/hRFVCJBgBiQIIarxc8=",
+  "Hash": "VBO33FMgRVS9QrkbhVBr6WHlhghEmytGn88wMriqLG4=",
   "Source": "VintageCinema",
   "BasePath": "_content/VintageCinema",
   "Mode": "Default",
@@ -2086,6 +2086,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\info\\about-us.webp"
+    },
+    {
+      "Identity": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\info\\Logo.png",
+      "SourceId": "VintageCinema",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\",
+      "BasePath": "_content/VintageCinema",
+      "RelativePath": "info/Logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\info\\Logo.png"
     },
     {
       "Identity": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\Jpg\\AQuietPlace.jpg",

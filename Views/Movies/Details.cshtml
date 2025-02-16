@@ -14,18 +14,18 @@
     }
 
     .movie-details-container {
-        max-width: 1000px; /* Increased container width */
+        max-width: 1000px; 
         margin: 20px auto;
         padding: 20px;
         background-color: #1a1a1a;
         border-radius: 10px;
-        display: flex; /* Use flexbox for layout */
-        gap: 20px; /* Space between image and details */
+        display: flex;
+        gap: 20px;
     }
 
     .movie-cover-container {
-        flex: 1; /* Take up 1 part of the container */
-        max-width: 400px; /* Larger image size */
+        flex: 1; 
+        max-width: 400px; 
     }
 
     .movie-cover {
@@ -35,7 +35,7 @@
     }
 
     .movie-info {
-        flex: 2; /* Take up 2 parts of the container */
+        flex: 2; 
         padding: 10px;
     }
 
@@ -86,6 +86,6 @@
         <p><strong>Category:</strong> @Model.Category</p>
 
         <!-- Back to Movies Link -->
-        <a href="@Url.Action("Movies")" class="back-link">← Back to Movies</a>
+        <a href="@Url.Action("Movies")" class="back-link">Back to Movies</a>
     </div>
 </div>

@@ -46,13 +46,13 @@ namespace VintageCinema.Controllers
                 {
                     new Claim(ClaimTypes.Name, user.Email),
                     new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                    new Claim("IsAdmin", user.IsAdmin.ToString().ToLowerInvariant()) // Ensure "true" or "false" as string
+                    new Claim("IsAdmin", user.IsAdmin.ToString().ToLowerInvariant()) 
                 };
 
                 var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var authProperties = new AuthenticationProperties
                 {
-                    IsPersistent = true, // Keeps the user logged in across sessions
+                    IsPersistent = true, 
                     ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(30) // Session expiration
                 };
 

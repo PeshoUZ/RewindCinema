@@ -8,26 +8,30 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/VintageCinema.styles.css" asp-append-version="true" />
     <style>
-        /* FIRST NAVBAR (Black background with dark red text & buttons) */
+        .logo-img {
+            height: 50px; 
+            transition: 0.3s ease-in-out;
+        }
+
         .top-navbar {
             background-color: black !important;
             padding: 15px;
-            height: 70px; /* Adjusted height */
-            line-height: 30px; /* Vertical alignment */
+            height: 70px;
+            line-height: 30px;
         }
 
             .top-navbar .navbar-brand {
-                color: #b30000 !important; /* Dark Red */
+                color: #b30000 !important; 
                 font-weight: bold;
                 font-size: 1.5rem;
             }
 
                 .top-navbar .navbar-brand:hover {
-                    color: #ff1a1a !important; /* Slightly Brighter Red */
+                    color: #ff1a1a !important; 
                 }
 
             .top-navbar .btn {
-                background-color: #b30000; /* Dark Red */
+                background-color: #b30000; 
                 border: none;
                 color: white;
                 padding: 5px 10px;
@@ -35,7 +39,7 @@
             }
 
                 .top-navbar .btn:hover {
-                    background-color: #800000; /* Even Darker Red */
+                    background-color: #800000; 
                 }
 
             .top-navbar .auth-info {
@@ -44,9 +48,8 @@
                 font-weight: bold;
             }
 
-        /* SECOND NAVBAR (Dark Red background with black button-like links) */
         .second-navbar {
-            background-color: #800000 !important; /* Dark Red */
+            background-color: #800000 !important; 
             padding: 0;
         }
 
@@ -65,21 +68,54 @@
             }
 
                 .second-navbar .nav-link:hover {
-                    background-color: #b30000; /* Dark Red Hover */
+                    background-color: #b30000;
                 }
 
-        /* REMOVE GAP BETWEEN NAVBARS */
+
         .navbar + .navbar {
             margin-top: 0 !important;
         }
 
-        /* KEEP CONTENT FULL WIDTH */
         .wide-container {
             max-width: 100%;
         }
 
         .auth-buttons {
-            margin-left: 10px; /* Adds space between buttons */
+            margin-left: 10px; 
+        }
+
+        @@media (max-width: 768px) {
+            .top-navbar .container-fluid {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .top-navbar .navbar-toggler {
+                order: 1; 
+            }
+
+            .top-navbar .auth-buttons {
+                display: flex;
+                flex-direction: row; 
+                align-items: center;
+                gap: 15px;
+                margin-left: 5px; 
+            }
+
+            .top-navbar .auth-info {
+                font-size: 14px;
+                margin-right: 10px;
+            }
+
+            .auth-buttons .btn {
+                padding: 8px 12px;
+                font-size: 14px;
+            }
+
+            .logo-img {
+                height: 35px; 
+            }
         }
     </style>
 </head>
@@ -88,7 +124,9 @@
         <!-- FIRST NAVBAR -->
         <nav class="navbar navbar-expand-sm top-navbar">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">VintageCinema</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="/info/Logo.png" alt="VintageCinema Logo" class="logo-img">
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation" style="background-color: #B30000; border: none; padding: 10px;">
                     <span class="navbar-toggler-icon" style="background-color: white; width: 20px; height: 3px;"></span>

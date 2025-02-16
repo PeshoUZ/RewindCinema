@@ -13,7 +13,7 @@ public class MoviesController : Controller
         _db = db;
     }
 
-    // Display all movies
+    // All movies
     public IActionResult Movies()
     {
         var movies = _db.Movies
@@ -21,14 +21,13 @@ public class MoviesController : Controller
         {
             Id = m.Id,
             Title = m.Title,
-            // Add only the fields you need
         })
         .ToList();
 
         return View(movies);
     }
 
-    // Display movie details
+    // Movie details
     public IActionResult Details(int id)
     {
         var movie = _db.Movies.FirstOrDefault(m => m.Id == id);

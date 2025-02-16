@@ -277,6 +277,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\info\\Logo.png",
+      "PackagePath": "staticwebassets\\info\\Logo.png"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\info\\about-us.webp",
       "PackagePath": "staticwebassets\\info\\about-us.webp"
     },

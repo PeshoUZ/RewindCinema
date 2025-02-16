@@ -145,24 +145,21 @@
                 const row = parseInt(this.getAttribute("data-row")); // Ensure row is an integer
                 const col = parseInt(this.getAttribute("data-col")); // Ensure col is an integer
 
-                // Check if the seat is already selected
                 const seatIndex = selectedSeats.findIndex(s => s.Row === row && s.Col === col);
 
                 if (seatIndex !== -1) {
-                    // Seat is already selected, so remove it
+
                     selectedSeats.splice(seatIndex, 1);
                     this.classList.remove("selected");
                 } else {
-                    // Seat is not selected, so add it
-                    selectedSeats.push({ Row: row, Col: col }); // Use an object with Row and Col properties
+
+                    selectedSeats.push({ Row: row, Col: col }); 
                     this.classList.add("selected");
                 }
 
-                // Update the UI
                 document.getElementById("selectedSeats").innerText = selectedSeats.length;
                 document.getElementById("totalPrice").innerText = (selectedSeats.length * pricePerSeat).toFixed(2);
 
-                // Update the hidden input field
                 document.getElementById("selectedSeatsInput").value = JSON.stringify(selectedSeats);
             });
         });
