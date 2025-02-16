@@ -49,14 +49,14 @@ namespace VintageCinema.Data
                 )
                 .HasColumnType("JSON"); // MySQL JSON type
 
-            // ReservationModel - Store `ReservedSeats` as JSON
+            // Configure ReservedSeats to be stored as JSON
             modelBuilder.Entity<ReservationModel>()
                 .Property(r => r.ReservedSeats)
                 .HasConversion(
-                    v => JsonSerializer.Serialize(v, (JsonSerializerOptions)null),  // Serialize List<(int, int)>
-                    v => JsonSerializer.Deserialize<List<(int, int)>>(v, (JsonSerializerOptions)null)
+                    v => JsonSerializer.Serialize(v, (JsonSerializerOptions)null), // Serialize to JSON
+                    v => JsonSerializer.Deserialize<List<Seat>>(v, (JsonSerializerOptions)null) // Deserialize from JSON
                 )
-                .HasColumnType("JSON"); // MySQL JSON type
+                .HasColumnType("json"); // Use JSON column type in the database
         }     
     }
 }

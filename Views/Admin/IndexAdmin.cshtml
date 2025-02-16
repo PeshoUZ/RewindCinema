@@ -10,14 +10,27 @@
         background-color: black;
         color: white;
         font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Ensure the body takes at least the full viewport height */
     }
 
-    .container {
-        max-width: 800px;
-        margin: auto;
+    .admin-container {
+        max-width: 1200px;
+        margin: 20px auto;
         padding: 20px;
         background-color: #1a1a1a;
         border-radius: 10px;
+        box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+        flex: 1; /* Allow the container to grow and push the footer down */
+    }
+
+    h2 {
+        color: #B30000;
+        text-align: center;
+        margin-bottom: 20px;
     }
 
     .btn {
@@ -28,68 +41,160 @@
         border-radius: 5px;
         cursor: pointer;
         margin-top: 10px;
+        transition: background-color 0.3s ease;
     }
+
+        .btn:hover {
+            background-color: #ff1a1a;
+        }
 
     select, input {
         background-color: #333;
         color: white;
-        padding: 5px;
+        padding: 8px;
+        border: 1px solid #444;
         border-radius: 5px;
+        margin-bottom: 10px;
+        width: 100%;
     }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        border: none;
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #444;
+        border: none;
+    }
+
+    th {
+        background-color: #B30000;
+        color: white;
+    }
+
+    tr:hover {
+        background-color: #333;
+    }
+
+    .actions {
+        display: flex;
+        gap: 10px;
+    }
+
+        .actions form {
+            margin: 0;
+        }
+
+        .actions .btn {
+            margin: 0;
+        }
+
+    hr {
+        border: 1px solid #444;
+        margin: 20px 0;
+    }
+    /* Responsive Table */
+    @@media (max-width: 768px) {
+        table, thead, tbody, th, td, tr {
+            display: block;
+        }
+
+        th {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+        tr {
+            border: 1px solid #444;
+            margin-bottom: 10px;
+        }
+
+        td {
+            border: none;
+            position: relative;
+            padding-left: 50%;
+        }
+
+            td:before {
+                position: absolute;
+                left: 10px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                content: attr(data-label);
+            }
+    }
+
 </style>
 
-<h2>Admin Panel - Manage Screenings</h2>
+<div class="admin-container">
+    <h2>Admin Panel - Manage Screenings</h2>
 
-<!-- ✅ Add Screening Form -->
-<form method="post" action="@Url.Action("Create")">
-    <label>Select Movie:</label>
-    <select name="MovieId" required>
-        @foreach (var movie in movies)
-        {
-            <option value="@movie.Id">@movie.Title</option>
-        }
-    </select>
+    <!-- ✅ Add Screening Form -->
+    <form method="post" action="@Url.Action("Create")">
+        <label>Select Movie:</label>
+        <select name="MovieId" required>
+            @foreach (var movie in movies)
+            {
+                <option value="@movie.Id">@movie.Title</option>
+            }
+        </select>
 
-    <label>Screening Date & Time:</label>
-    <input type="datetime-local" name="DateTime" required />
+        <label>Screening Date & Time:</label>
+        <input type="datetime-local" name="DateTime" required />
 
-    <label>Format:</label>
-    <select name="Format" required>
-        <option value="2D">2D</option>
-        <option value="3D">3D</option>
-        <option value="IMAX">IMAX</option>
-    </select>
+        <label>Format:</label>
+        <select name="Format" required>
+            <option value="2D">2D</option>
+            <option value="3D">3D</option>
+            <option value="IMAX">IMAX</option>
+        </select>
 
-    <button type="submit" class="btn">Add Screening</button>
-</form>
+        <label>Price:</label>
+        <input type="number" step="0.20" name="Price" required />
 
-<hr>
+        <button type="submit" class="btn">Add Screening</button>
+    </form>
 
-<!-- ✅ List of Screenings -->
-<table border="1" style="width: 100%; text-align: left; color: white;">
-    <thead>
-        <tr>
-            <th>Movie</th>
-            <th>Date & Time</th>
-            <th>Format</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var screening in Model)
-        {
+    <hr>
+
+    <!-- ✅ List of Screenings -->
+    <table>
+        <thead>
             <tr>
-                <td>@screening.Movie.Title</td>
-                <td>@screening.DateTime</td>
-                <td>@screening.Format</td>
-                <td>
-                    <a href="@Url.Action("Edit", new { id = screening.Id })" class="btn">Edit</a>
-                    <form method="post" action="@Url.Action("Delete")" style="display: inline;">
-                        <input type="hidden" name="id" value="@screening.Id" />
-                        <button type="submit" class="btn">Delete</button>
-                    </form>
-                </td>
+                <th>Movie</th>
+                <th>Date & Time</th>
+                <th>Format</th>
+                <th>Price</th>
+                <th>Actions</th>
+                <th>Reservations</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var screening in Model)
+            {
+                <tr>
+                    <td>@screening.Movie.Title</td>
+                    <td>@screening.DateTime</td>
+                    <td>@screening.Format</td>
+                    <td>$@screening.Price.ToString("0.00")</td>
+                    <td class="actions">
+                        <form method="post" action="@Url.Action("Delete")" style="display: inline;">
+                            <input type="hidden" name="id" value="@screening.Id" />
+                            <button type="submit" class="btn">Delete</button>
+                        </form>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Reservations", new { screeningId = screening.Id })" class="btn">View Reservations</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

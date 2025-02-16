@@ -171,9 +171,9 @@ namespace VintageCinema.Migrations
                 name: "AspNetUserLogins",
                 columns: table => new
                 {
-                    LoginProvider = table.Column<string>(type: "varchar(255)", nullable: false)
+                    LoginProvider = table.Column<string>(type: "varchar(128)", maxLength: 128, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    ProviderKey = table.Column<string>(type: "varchar(255)", nullable: false)
+                    ProviderKey = table.Column<string>(type: "varchar(128)", maxLength: 128, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     ProviderDisplayName = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -225,9 +225,9 @@ namespace VintageCinema.Migrations
                 {
                     UserId = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    LoginProvider = table.Column<string>(type: "varchar(255)", nullable: false)
+                    LoginProvider = table.Column<string>(type: "varchar(128)", maxLength: 128, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Name = table.Column<string>(type: "varchar(255)", nullable: false)
+                    Name = table.Column<string>(type: "varchar(128)", maxLength: 128, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Value = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4")
@@ -255,7 +255,8 @@ namespace VintageCinema.Migrations
                     Format = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Seats = table.Column<string>(type: "JSON", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Price = table.Column<decimal>(type: "decimal(65,30)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -279,7 +280,8 @@ namespace VintageCinema.Migrations
                     ScreeningId = table.Column<int>(type: "int", nullable: false),
                     ReservedSeats = table.Column<string>(type: "JSON", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Bill = table.Column<decimal>(type: "decimal(65,30)", nullable: false)
+                    Bill = table.Column<decimal>(type: "decimal(65,30)", nullable: false),
+                    ScreeningModelId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -290,6 +292,11 @@ namespace VintageCinema.Migrations
                         principalTable: "Screenings",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Reservations_Screenings_ScreeningModelId",
+                        column: x => x.ScreeningModelId,
+                        principalTable: "Screenings",
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Reservations_Users_UserId",
                         column: x => x.UserId,
@@ -340,6 +347,11 @@ namespace VintageCinema.Migrations
                 name: "IX_Reservations_ScreeningId",
                 table: "Reservations",
                 column: "ScreeningId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Reservations_ScreeningModelId",
+                table: "Reservations",
+                column: "ScreeningModelId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Reservations_UserId",

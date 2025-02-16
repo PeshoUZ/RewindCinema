@@ -165,10 +165,12 @@ namespace VintageCinema.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("varchar(255)");
+                        .HasMaxLength(128)
+                        .HasColumnType("varchar(128)");
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("varchar(255)");
+                        .HasMaxLength(128)
+                        .HasColumnType("varchar(128)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("longtext");
@@ -205,10 +207,12 @@ namespace VintageCinema.Migrations
                         .HasColumnType("varchar(255)");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("varchar(255)");
+                        .HasMaxLength(128)
+                        .HasColumnType("varchar(128)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("varchar(255)");
+                        .HasMaxLength(128)
+                        .HasColumnType("varchar(128)");
 
                     b.Property<string>("Value")
                         .HasColumnType("longtext");
@@ -274,9 +278,12 @@ namespace VintageCinema.Migrations
 
                     b.Property<string>("ReservedSeats")
                         .IsRequired()
-                        .HasColumnType("JSON");
+                        .HasColumnType("json");
 
                     b.Property<int>("ScreeningId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ScreeningModelId")
                         .HasColumnType("int");
 
                     b.Property<int>("UserId")
@@ -285,6 +292,8 @@ namespace VintageCinema.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("ScreeningId");
+
+                    b.HasIndex("ScreeningModelId");
 
                     b.HasIndex("UserId");
 
@@ -308,6 +317,9 @@ namespace VintageCinema.Migrations
 
                     b.Property<int>("MovieId")
                         .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(65,30)");
 
                     b.Property<string>("Seats")
                         .IsRequired()
@@ -411,6 +423,10 @@ namespace VintageCinema.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("VintageCinema.Models.ScreeningModel", null)
+                        .WithMany("Reservations")
+                        .HasForeignKey("ScreeningModelId");
+
                     b.HasOne("VintageCinema.Models.UserModel", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
@@ -431,6 +447,11 @@ namespace VintageCinema.Migrations
                         .IsRequired();
 
                     b.Navigation("Movie");
+                });
+
+            modelBuilder.Entity("VintageCinema.Models.ScreeningModel", b =>
+                {
+                    b.Navigation("Reservations");
                 });
 #pragma warning restore 612, 618
         }

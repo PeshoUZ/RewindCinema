@@ -106,6 +106,9 @@
             <option value="Action" selected="@(selectedGenre == "Action")">Action</option>
             <option value="Comedy" selected="@(selectedGenre == "Comedy")">Comedy</option>
             <option value="Drama" selected="@(selectedGenre == "Drama")">Drama</option>
+            <option value="Drama" selected="@(selectedGenre == "Horror")">Drama</option>
+            <option value="Drama" selected="@(selectedGenre == "Sci-Fi")">Drama</option>
+            <option value="Drama" selected="@(selectedGenre == "Fantasy")">Drama</option>
         </select>
         <button type="submit">Filter</button>
     </form>
@@ -134,11 +137,13 @@ else
                 <select id="showtime-@movie.Id" class="form-select bg-dark text-white w-auto d-inline">
                     @foreach (var screening in screenings)
                     {
-                        <option value="@screening.Id">@screening.DateTime.ToShortTimeString() - @screening.Format</option>
+                        <option value="@screening.Id" data-price="@screening.Price">
+                            @screening.DateTime.ToShortTimeString() - @screening.Format - ($@screening.Price.ToString("0.00"))
+                        </option>
                     }
                 </select>
 
-                <button class="reserve-btn">Reserve</button>
+                <a class="reserve-btn" href="@Url.Action("Reserve", "Home", new { id = screenings.First().Id })">Reserve</a>
             </div>
         </div>
     }

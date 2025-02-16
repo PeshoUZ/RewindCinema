@@ -1,0 +1,127 @@
+﻿ml
+Copy
+@model List<VintageCinema.Models.ReservationModel>
+
+@{
+    ViewData["Title"] = "Reservations for Screening";
+}
+
+<style>
+    body {
+        background-color: black;
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .admin-container {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #1a1a1a;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+    }
+
+    h2 {
+        color: #B30000;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        background-color: #B30000;
+        color: white;
+        padding: 8px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn:hover {
+            background-color: #ff1a1a;
+        }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #444;
+    }
+
+    th {
+        background-color: #B30000;
+        color: white;
+    }
+
+    tr:hover {
+        background-color: #333;
+    }
+
+    .reserved-seats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+        .reserved-seats span {
+            background-color: #444;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+    .message {
+        text-align: center;
+        color: #B30000;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+</style>
+
+<div class="container">
+    <h2>Reservations for Screening</h2>
+
+    @if (ViewBag.Message != null)
+    {
+        <p>@ViewBag.Message</p>
+    }
+    else
+    {
+        <table>
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Movie</th>
+                    <th>Reserved Seats</th>
+                    <th>Total Bill</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var reservation in Model)
+                {
+                    <tr>
+                        <td>@reservation.User?.Email</td>
+                        <td>@reservation.Screening?.Movie?.Title</td>
+                        <td>
+                            @foreach (var seat in reservation.ReservedSeats)
+                            {
+                                <span>(Row: @seat.Row, Col: @seat.Col)</span>
+                            }
+                        </td>
+                        <td>$@reservation.Bill.ToString("0.00")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+    <a href="@Url.Action("IndexAdmin")" class="btn">Back to Admin Panel</a>
+</div>

@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Reservation Success";
+}
+
+<style>
+    body {
+        background-color: black;
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+
+    .alert-success {
+        background-color: #28a745;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        margin: 20px auto;
+        max-width: 600px;
+    }
+
+    .redirect-message {
+        margin-top: 20px;
+        font-size: 1.2rem;
+    }
+</style>
+
+<div class="alert-success">
+    <p>@TempData["SuccessMessage"]</p>
+    <div class="redirect-message">You will be redirected to the home page in <span id="countdown">5</span> seconds...</div>
+</div>
+
+<script>
+    // Countdown and redirect logic
+    let seconds = 5;
+    const countdownElement = document.getElementById("countdown");
+
+    const countdown = setInterval(() => {
+        seconds--;
+        countdownElement.textContent = seconds;
+
+        if (seconds <= 0) {
+            clearInterval(countdown);
+            window.location.href = "@Url.Action("Index", "Home")"; // Redirect to the Index page
+        }
+    }, 1000);
+</script>

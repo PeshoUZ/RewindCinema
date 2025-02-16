@@ -1,0 +1,91 @@
+﻿@model VintageCinema.Models.MovieModel
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<style>
+    body {
+        background-color: black;
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .movie-details-container {
+        max-width: 1000px; /* Increased container width */
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #1a1a1a;
+        border-radius: 10px;
+        display: flex; /* Use flexbox for layout */
+        gap: 20px; /* Space between image and details */
+    }
+
+    .movie-cover-container {
+        flex: 1; /* Take up 1 part of the container */
+        max-width: 400px; /* Larger image size */
+    }
+
+    .movie-cover {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .movie-info {
+        flex: 2; /* Take up 2 parts of the container */
+        padding: 10px;
+    }
+
+        .movie-info h2 {
+            color: #B30000;
+            margin-top: 0;
+        }
+
+        .movie-info p {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+    .back-link {
+        display: inline-block;
+        margin-top: 20px;
+        color: #B30000;
+        text-decoration: none;
+        font-size: 1.1rem;
+    }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+</style>
+
+<div class="movie-details-container">
+    <!-- Movie Cover -->
+    <div class="movie-cover-container">
+        @if (Model.Picture != null && Model.Picture.Length > 0)
+        {
+            <img src="data:image/jpeg;base64,@Convert.ToBase64String(Model.Picture)" alt="@Model.Title" class="movie-cover" />
+        }
+        else
+        {
+            <img src="/images/covers/default.webp" alt="Default Cover" class="movie-cover" />
+        }
+    </div>
+
+    <!-- Movie Information -->
+    <div class="movie-info">
+        <h2>@Model.Title</h2>
+        <p><strong>Description:</strong> @Model.Description</p>
+        <p><strong>Director:</strong> @Model.Director</p>
+        <p><strong>Release Year:</strong> @Model.ReleaseDate</p>
+        <p><strong>Genre:</strong> @Model.Genre</p>
+        <p><strong>Length:</strong> @Model.Length minutes</p>
+        <p><strong>Category:</strong> @Model.Category</p>
+
+        <!-- Back to Movies Link -->
+        <a href="@Url.Action("Movies")" class="back-link">← Back to Movies</a>
+    </div>
+</div>

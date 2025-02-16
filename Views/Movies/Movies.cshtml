@@ -1,0 +1,82 @@
+﻿@model List<VintageCinema.Models.MovieModel>
+
+@{
+    ViewData["Title"] = "Movies";
+}
+
+<style>
+    body {
+        background-color: black;
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .movies-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .movie-card {
+        text-align: center;
+        cursor: pointer;
+        background-color: #1a1a1a;
+        border-radius: 10px;
+        padding: 15px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .movie-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+    .movie-cover {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    .movie-title {
+        margin-top: 10px;
+        font-size: 1.1rem;
+        color: white;
+        font-weight: bold;
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+        .pagination a {
+            color: #B30000;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.1rem;
+        }
+
+            .pagination a:hover {
+                text-decoration: underline;
+            }
+</style>
+
+<h2 style="text-align: center; margin: 20px 0;">Movies</h2>
+
+<div class="movies-grid">
+    @foreach (var movie in Model)
+    {
+        var coverImageUrl = $"/covers/{movie.Title.ToLower().Replace(" ", "-").Replace(":", "")}.webp";
+        <a href="@Url.Action("Details", "Movies", new { id = movie.Id })" class="movie-card">
+            <img src="@coverImageUrl" alt="@movie.Title" class="movie-cover" onerror="this.onerror=null; this.src='/images/covers/default.webp'" />
+            <div class="movie-title">@movie.Title</div>
+        </a>
+    }
+</div>

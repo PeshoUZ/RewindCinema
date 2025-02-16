@@ -93,16 +93,180 @@
       "PackagePath": "staticwebassets\\Jpg\\Titanic.jpg"
     },
     {
-      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\Dune2.webp",
-      "PackagePath": "staticwebassets\\covers\\Dune2.webp"
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\a-quiet-place.jpg",
+      "PackagePath": "staticwebassets\\covers\\a-quiet-place.jpg"
     },
     {
-      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\Inception.webp",
-      "PackagePath": "staticwebassets\\covers\\Inception.webp"
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\a-quiet-place.webp",
+      "PackagePath": "staticwebassets\\covers\\a-quiet-place.webp"
     },
     {
-      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\KillBill.webp",
-      "PackagePath": "staticwebassets\\covers\\KillBill.webp"
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\crazy-rich-asians.jpg",
+      "PackagePath": "staticwebassets\\covers\\crazy-rich-asians.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\crazy-rich-asians.webp",
+      "PackagePath": "staticwebassets\\covers\\crazy-rich-asians.webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\dune-part-two.jpg",
+      "PackagePath": "staticwebassets\\covers\\dune-part-two.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\dune-part-two.webp",
+      "PackagePath": "staticwebassets\\covers\\dune-part-two.webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\get-out.jpg",
+      "PackagePath": "staticwebassets\\covers\\get-out.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\get-out.webp",
+      "PackagePath": "staticwebassets\\covers\\get-out.webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\gladiator.jpg",
+      "PackagePath": "staticwebassets\\covers\\gladiator.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\gladiator.webp",
+      "PackagePath": "staticwebassets\\covers\\gladiator.webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\harry-potter-and-the-sorcerer’s-stone.jpg",
+      "PackagePath": "staticwebassets\\covers\\harry-potter-and-the-sorcerer’s-stone.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\harry-potter-and-the-sorcerer’s-stone.webp",
+      "PackagePath": "staticwebassets\\covers\\harry-potter-and-the-sorcerer’s-stone.webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\hereditary.webp",
+      "PackagePath": "staticwebassets\\covers\\hereditary.webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\heriditary.jpg",
+      "PackagePath": "staticwebassets\\covers\\heriditary.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\inception.jpg",
+      "PackagePath": "staticwebassets\\covers\\inception.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\inception.webp",
+      "PackagePath": "staticwebassets\\covers\\inception.webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\it-(2017).webp",
+      "PackagePath": "staticwebassets\\covers\\it-(2017).webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\it.jpg",
+      "PackagePath": "staticwebassets\\covers\\it.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\mad-max-fury-road.jpg",
+      "PackagePath": "staticwebassets\\covers\\mad-max-fury-road.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\mad-max-fury-road.webp",
+      "PackagePath": "staticwebassets\\covers\\mad-max-fury-road.webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\pan’s-labyrinth.jpg",
+      "PackagePath": "staticwebassets\\covers\\pan’s-labyrinth.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\pan’s-labyrinth.webp",
+      "PackagePath": "staticwebassets\\covers\\pan’s-labyrinth.webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\pirates-of-the-caribbean-the-curse-of-the-black-pearl.jpg",
+      "PackagePath": "staticwebassets\\covers\\pirates-of-the-caribbean-the-curse-of-the-black-pearl.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\pirates-of-the-caribbean-the-curse-of-the-black-pearl.webp",
+      "PackagePath": "staticwebassets\\covers\\pirates-of-the-caribbean-the-curse-of-the-black-pearl.webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\step-brothers.jpg",
+      "PackagePath": "staticwebassets\\covers\\step-brothers.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\step-brothers.webp",
+      "PackagePath": "staticwebassets\\covers\\step-brothers.webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\superbad.jpg",
+      "PackagePath": "staticwebassets\\covers\\superbad.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\superbad.webp",
+      "PackagePath": "staticwebassets\\covers\\superbad.webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\the-conjuring.jpg",
+      "PackagePath": "staticwebassets\\covers\\the-conjuring.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\the-conjuring.webp",
+      "PackagePath": "staticwebassets\\covers\\the-conjuring.webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\the-dark-knight.jpg",
+      "PackagePath": "staticwebassets\\covers\\the-dark-knight.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\the-dark-knight.webp",
+      "PackagePath": "staticwebassets\\covers\\the-dark-knight.webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\the-hangover.jpg",
+      "PackagePath": "staticwebassets\\covers\\the-hangover.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\the-hangover.webp",
+      "PackagePath": "staticwebassets\\covers\\the-hangover.webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\the-lord-of-the-rings-the-fellowship-of-the-ring.jpg",
+      "PackagePath": "staticwebassets\\covers\\the-lord-of-the-rings-the-fellowship-of-the-ring.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\the-lord-of-the-rings-the-fellowship-of-the-ring.webp",
+      "PackagePath": "staticwebassets\\covers\\the-lord-of-the-rings-the-fellowship-of-the-ring.webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\the-matrix.jpg",
+      "PackagePath": "staticwebassets\\covers\\the-matrix.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\the-matrix.webp",
+      "PackagePath": "staticwebassets\\covers\\the-matrix.webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\the-notebook.jpg",
+      "PackagePath": "staticwebassets\\covers\\the-notebook.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\the-notebook.webp",
+      "PackagePath": "staticwebassets\\covers\\the-notebook.webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\the-wolf-of-wall-street.jpg",
+      "PackagePath": "staticwebassets\\covers\\the-wolf-of-wall-street.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\the-wolf-of-wall-street.webp",
+      "PackagePath": "staticwebassets\\covers\\the-wolf-of-wall-street.webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\titanic.jpg",
+      "PackagePath": "staticwebassets\\covers\\titanic.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\covers\\titanic.webp",
+      "PackagePath": "staticwebassets\\covers\\titanic.webp"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\css\\site.css",
@@ -111,6 +275,10 @@
     {
       "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\info\\about-us.webp",
+      "PackagePath": "staticwebassets\\info\\about-us.webp"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\New folder\\VintageCinema\\wwwroot\\js\\site.js",

@@ -9,8 +9,15 @@
         public ScreeningModel? Screening { get; set; } // Navigational property
 
         // List of reserved seat positions (row, col)
-        public List<(int Row, int Col)> ReservedSeats { get; set; } = new List<(int, int)>();
+        public List<Seat> ReservedSeats { get; set; } = new List<Seat>();
 
         public decimal Bill { get; set; }
+    }
+
+    // Define a Seat class for deserialization
+    public class Seat
+    {
+        public int Row { get; set; }
+        public int Col { get; set; }
     }
 }

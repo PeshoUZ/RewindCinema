@@ -1,0 +1,170 @@
+﻿@model VintageCinema.Models.ReservationModel
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+
+
+@{
+    ViewData["Title"] = "Reserve Seats";
+}
+
+<style>
+    body {
+        background-color: black;
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+
+    .seat-grid {
+        display: grid;
+        grid-template-columns: repeat(16, 30px);
+        gap: 5px;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .seat {
+        width: 30px;
+        height: 30px;
+        background-color: green;
+        text-align: center;
+        line-height: 30px;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+        .seat.selected {
+            background-color: red;
+        }
+
+        .seat.reserved {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+
+    .screen {
+        text-align: center;
+        margin-bottom: 10px;
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: #B30000;
+    }
+
+    .summary {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .reserve-btn {
+        background-color: #B30000;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+
+    .alert-success {
+        background-color: #28a745;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .movie-container {
+        background-color: #1a1a1a;
+        color: white;
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    .movie-poster {
+        width: 100px;
+        height: 150px;
+        border-radius: 5px;
+        margin-right: 15px;
+    }
+
+    .movie-info {
+        flex-grow: 1;
+    }
+
+    select {
+        background-color: #333;
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+    }
+</style>
+
+<h2 class="text-center">@Model.Screening.Movie.Title - @Model.Screening.DateTime.ToString("f")</h2>
+<h4 class="text-center">Format: @Model.Screening.Format | Price per Seat: $@Model.Screening.Price.ToString("0.00")</h4>
+
+<div class="screen">SCREEN</div>
+
+<div class="seat-grid" id="seatGrid">
+    @for (int row = 0; row < 16; row++)
+    {
+        for (int col = 0; col < 16; col++)
+        {
+            var isReserved = Model.ReservedSeats.Any(s => s.Row == row && s.Col == col);
+            <div class="seat @(isReserved ? "reserved" : "")" data-row="@row" data-col="@col"></div>
+        }
+    }
+</div>
+
+<div class="summary">
+    <p>Selected Seats: <span id="selectedSeats">0</span></p>
+    <p>Total Price: $<span id="totalPrice">0.00</span></p>
+    <form asp-action="ConfirmReservation" method="post">
+        <input type="hidden" name="screeningId" value="@Model.Screening.Id" />
+        <input type="hidden" name="selectedSeats" id="selectedSeatsInput" />
+        <button type="submit" class="reserve-btn">Confirm Reservation</button>
+    </form>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const seats = document.querySelectorAll(".seat:not(.reserved)");
+        const pricePerSeat = @Model.Screening.Price;
+        let selectedSeats = [];
+
+        seats.forEach(seat => {
+            seat.addEventListener("click", function () {
+                const row = parseInt(this.getAttribute("data-row")); // Ensure row is an integer
+                const col = parseInt(this.getAttribute("data-col")); // Ensure col is an integer
+
+                // Check if the seat is already selected
+                const seatIndex = selectedSeats.findIndex(s => s.Row === row && s.Col === col);
+
+                if (seatIndex !== -1) {
+                    // Seat is already selected, so remove it
+                    selectedSeats.splice(seatIndex, 1);
+                    this.classList.remove("selected");
+                } else {
+                    // Seat is not selected, so add it
+                    selectedSeats.push({ Row: row, Col: col }); // Use an object with Row and Col properties
+                    this.classList.add("selected");
+                }
+
+                // Update the UI
+                document.getElementById("selectedSeats").innerText = selectedSeats.length;
+                document.getElementById("totalPrice").innerText = (selectedSeats.length * pricePerSeat).toFixed(2);
+
+                // Update the hidden input field
+                document.getElementById("selectedSeatsInput").value = JSON.stringify(selectedSeats);
+            });
+        });
+    });
+</script>

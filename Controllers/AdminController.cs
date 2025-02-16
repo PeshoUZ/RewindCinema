@@ -39,7 +39,7 @@ public class AdminController : Controller
     [HttpPost]
     public async Task<IActionResult> Create(ScreeningModel screening)
     {
-        Console.WriteLine($"🛠️ DEBUG: MovieId: {screening.MovieId}, DateTime: {screening.DateTime}, Format: {screening.Format}");
+        Console.WriteLine($"🛠️ DEBUG: MovieId: {screening.MovieId}, DateTime: {screening.DateTime}, Format: {screening.Format}, Price: {screening.Price}");
 
         // Fetch the Movie manually
         var movie = await _db.Movies.FindAsync(screening.MovieId);
@@ -70,30 +70,6 @@ public class AdminController : Controller
         return RedirectToAction("IndexAdmin");
     }
 
-    // Edit Screening
-    public async Task<IActionResult> Edit(int id)
-    {
-        var screening = await _db.Screenings.FindAsync(id);
-        if (screening == null) return NotFound();
-
-        ViewBag.Movies = await _db.Movies.ToListAsync();
-        return View(screening);
-    }
-
-    // Edit Screening (POST)
-    [HttpPost]
-    public async Task<IActionResult> Edit(ScreeningModel screening)
-    {
-        if (ModelState.IsValid)
-        {
-            _db.Screenings.Update(screening);
-            await _db.SaveChangesAsync();
-            return RedirectToAction("IndexAdmin");
-        }
-
-        return View(screening);
-    }
-
     // Delete Screening
     [HttpPost]
     public async Task<IActionResult> Delete(int id)
@@ -105,6 +81,25 @@ public class AdminController : Controller
             await _db.SaveChangesAsync();
         }
         return RedirectToAction("IndexAdmin");
+    }
+
+    // View Reservations
+    [HttpGet]
+    public async Task<IActionResult> Reservations(int screeningId)
+    {
+        var reservations = await _db.Reservations
+            .Include(r => r.User)
+            .Include(r => r.Screening)
+            .ThenInclude(s => s.Movie)
+            .Where(r => r.ScreeningId == screeningId)
+            .ToListAsync();
+
+        if (reservations == null || !reservations.Any())
+        {
+            ViewBag.Message = "No reservations found for this screening.";
+        }
+
+        return View(reservations);
     }
 
     // Helper function to create an empty 16x16 seat layout
